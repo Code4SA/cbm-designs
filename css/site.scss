@@ -3,6 +3,86 @@
 
 @charset "utf-8";
 
+// BOOTSTRAP VARIABLE OVERIDES 
+
+//== Colors
+
+$white: #fff;
+$black: #000;
+
+$orange: #f6921d;
+$green: #8cc63f;
+
+$brand-primary: $orange !default;
+
+$brand-primary-light: lighten($brand-primary,5%);
+$brand-primary-lighter: ligthen($brand-primary,10%);
+$brand-primary-dark: darken($brand-primary,5%);
+$brand-primary-darker: darken($brand-primary,10%);
+
+$brand-secondary: $green;
+
+$brand-secondary-light: lighten($brand-secondary,5%);
+$brand-secondary-lighter: ligthen($brand-secondary,10%);
+$brand-secondary-dark: darken($brand-secondary,5%);
+$brand-secondary-darker: darken($brand-secondary,10%);
+
+//== Typography
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800);
+
+$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif-2: "Montserrat", Helvetica, Arial, sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$line-height-base: 1.8 !default;
+
+//== Links
+
+$link-color: $brand-primary !default;
+$link-hover-color: $brand-secondary !default;
+$link-hover-decoration: none !default;
+
+//== Navbar
+
+$navbar-default-color: $white !default;
+$navbar-default-bg: $brand-primary-dark !default;
+
+$navbar-default-link-color: #fff !default;
+$navbar-default-link-hover-color: $brand-secondary !default;
+
+$navbar-border-radius: 0 !default;
+$navbar-margin-bottom: 0;
+
+$navbar-default-link-active-color: #000 !default;
+$navbar-default-link-active-bg: $white;
+
+//== Jumbotron
+
+$jumbotron-bg: $white;
+
+//== Breadcrumbs
+$breadcrumb-padding-vertical: 0;
+$breadcrumb-padding-horizontal: 0;
+$breadcrumb-bg: transparent;
+$breadcrumb-color: $black !default;
+$breadcrumb-active-color: #000 !default;
+$breadcrumb-separator: "→" !default;
+
+//== Buttons
+
+$btn-font-weight: bold;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: transparent;
+
+$btn-default-border: transparent;
+
+$btn-border-radius-base: 20px !default;
+$btn-border-radius-large: 50px;
+
 //============================================================================================
 
 // Import Bootstrap SASS
@@ -13,7 +93,102 @@
 
 //============================================================================================
 
-// Sortable Table
+// CUSTOM CSS
+
+//== Header
+
+.site-header{
+	background-color: $brand-primary;
+}
+
+.site-title{
+	padding: 1em 0;
+	font-family: $font-family-sans-serif-2;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+//== Navbar
+
+.site-header .navbar{
+	border: 0;
+	text-transform: uppercase;
+	font-family: $font-family-sans-serif-2;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 12px;
+	li{
+		background-color: $black;
+		a{
+			padding: 15px;
+		}
+	}
+}
+
+//== Jumbotron
+.jumbotron{
+	h1, .h1{
+		font-size: 32px;
+	}
+}
+
+//== Section
+
+.section{
+
+	padding: 2em 0;
+
+	a{
+		border-bottom: solid 2px $link-color;
+		&:hover{
+			border-color: $link-hover-color;
+		}
+	}
+
+	.section-heading{
+		font-family: $font-family-sans-serif-2;
+		border-bottom: solid 1px $black;
+		margin-bottom: 2em;
+
+	}
+
+	table.sortable{
+		thead{
+			background-color: $brand-secondary-dark;
+			text-transform: uppercase;
+			color: $white;
+			th{
+				border: 0;
+			}
+		}
+}
+}
+
+//== #home
+
+#home{
+
+	.search-lg, .programme-explore-menu{
+		padding: 2em 0;
+	}
+
+	.search-lg{
+		background-color: $brand-secondary-light;
+	}
+
+	.programme-explore-menu{
+		background-color: $brand-primary-light;		
+	}
+
+}
+
+//== Buttons
+.btn-lg{
+	font-family: $font-family-sans-serif-2;
+	font-size: 1em;
+	letter-spacing: 1px;
+}
+//== Sortable Table
 
 /* add a number column at the beginning of sortable tables, that can't itself be sorted and doesn't change on sorting */
 table.sortable tbody {
@@ -27,7 +202,6 @@ table.sortable thead tr::before {
     line-height: $line-height-base;
 
 	vertical-align: bottom;
-    border-bottom: 2px solid $table-border-color;
 
     white-space: nowrap;
     width: 1px;
@@ -49,4 +223,15 @@ table.sortable tbody tr::before {
 /* add up and down arrows to columns to show that they are sortable */
 table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
     content: " \25B4\25BE" 
+}
+
+//== Footer
+footer.footer{
+	padding: 2em 0;
+	background: $gray-lighter;
+}
+
+//== Helper classes
+.uppercase{
+	text-transform: uppercase;
 }
