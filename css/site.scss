@@ -12,3 +12,41 @@
 @import "font-awesome.scss";
 
 //============================================================================================
+
+// Sortable Table
+
+/* add a number column at the beginning of sortable tables, that can't itself be sorted and doesn't change on sorting */
+table.sortable tbody {
+    counter-reset: sortabletablescope;
+}
+table.sortable thead tr::before {
+    content: "#";
+    display: table-cell;
+
+	padding: $table-cell-padding;
+    line-height: $line-height-base;
+
+	vertical-align: bottom;
+    border-bottom: 2px solid $table-border-color;
+
+    white-space: nowrap;
+    width: 1px;
+}
+table.sortable tbody tr::before {
+    content: counter(sortabletablescope);
+    counter-increment: sortabletablescope;
+    display: table-cell;
+
+    padding: $table-cell-padding;
+    line-height: $line-height-base;
+    vertical-align: top;
+    border-top: 1px solid $table-border-color;    
+
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* add up and down arrows to columns to show that they are sortable */
+table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25B4\25BE" 
+}
