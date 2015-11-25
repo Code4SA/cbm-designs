@@ -183,6 +183,12 @@ $input-border-focus: $brand-primary !default;
 }
 }
 
+//== site
+.site-multimedia{
+	background-color: $brand-secondary-light;
+	min-height: 200px;
+}
+
 //== #home
 
 #home{
@@ -259,4 +265,8 @@ footer.footer{
 //== Helper classes
 .uppercase{
 	text-transform: uppercase;
+}
+.min-width{
+	white-space: nowrap;
+	width: 1px;
 }
