@@ -13,6 +13,18 @@ $black: #000;
 $orange: #f6921d;
 $green: #8cc63f;
 
+$gray-base:              #000 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
 $brand-primary: $orange !default;
 
 $brand-primary-light: lighten($brand-primary,5%);
@@ -37,11 +49,12 @@ $font-family-sans-serif-2: "Montserrat", Helvetica, Arial, sans-serif !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $line-height-base: 1.8 !default;
+$headings-line-height: 1.4 !default;
 
 //== Links
 
 $link-color: $brand-primary !default;
-$link-hover-color: $brand-secondary !default;
+$link-hover-color: $brand-secondary-dark !default;
 $link-hover-decoration: none !default;
 
 //== Navbar
@@ -80,8 +93,14 @@ $btn-primary-border: transparent;
 
 $btn-default-border: transparent;
 
-$btn-border-radius-base: 20px !default;
+$btn-border-radius-base: 4px !default;
 $btn-border-radius-large: 50px;
+
+//== Forms
+$input-color: $black !default;
+$input-border: transparent !default;
+$input-color-placeholder: $gray-light !default;
+$input-border-focus: $brand-primary !default;
 
 //============================================================================================
 
@@ -218,6 +237,12 @@ table.sortable tbody tr::before {
 
 	white-space: nowrap;
 	width: 1px;
+}
+
+//== Forms
+input{
+	font-family: $font-family-sans-serif-2;
+	font-weight: bold;
 }
 
 /* add up and down arrows to columns to show that they are sortable */
