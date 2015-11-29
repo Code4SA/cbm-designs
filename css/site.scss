@@ -27,17 +27,13 @@ $brand-danger:          #d9534f !default;
 
 $brand-primary: $orange !default;
 
-$brand-primary-light: lighten($brand-primary,5%);
-$brand-primary-lighter: ligthen($brand-primary,10%);
-$brand-primary-dark: darken($brand-primary,5%);
-$brand-primary-darker: darken($brand-primary,10%);
+$brand-primary-light: lighten($brand-primary,10%);
+$brand-primary-dark: darken($brand-primary,10%);
 
 $brand-secondary: $green;
 
-$brand-secondary-light: lighten($brand-secondary,5%);
-$brand-secondary-lighter: ligthen($brand-secondary,10%);
-$brand-secondary-dark: darken($brand-secondary,5%);
-$brand-secondary-darker: darken($brand-secondary,10%);
+$brand-secondary-light: lighten($brand-secondary,10%);
+$brand-secondary-dark: darken($brand-secondary,10%);
 
 //== Typography
 
@@ -48,8 +44,10 @@ $font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif !default;
 $font-family-sans-serif-2: "Montserrat", Helvetica, Arial, sans-serif !default;
 $font-family-base: $font-family-sans-serif !default;
 
-$line-height-base: 1.8 !default;
-$headings-line-height: 1.4 !default;
+$font-size-base: 16px !default;
+
+$line-height-base: 2 !default;
+$headings-line-height: 1.6 !default;
 
 //== Links
 
@@ -58,6 +56,8 @@ $link-hover-color: $brand-secondary-dark !default;
 $link-hover-decoration: none !default;
 
 //== Navbar
+
+$navbar-height: 20px !default;
 
 $navbar-default-color: $white !default;
 $navbar-default-bg: $brand-primary-dark !default;
@@ -127,19 +127,28 @@ $input-border-focus: $brand-primary !default;
 	font-weight: bold;
 }
 
+//== Links
+
+a.btn-primary{
+
+	border: 0 !important;
+
+}
+
 //== Navbar
 
 .site-header .navbar{
 	border: 0;
 	text-transform: uppercase;
 	font-family: $font-family-sans-serif-2;
-	font-size: 1em;
+	font-size: 12px;
 	font-weight: bold;
 	line-height: 12px;
 	li{
 		background-color: $black;
 		a{
 			padding: 15px;
+			line-height: inherit;
 		}
 	}
 }
@@ -256,17 +265,233 @@ table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sor
     content: " \25B4\25BE" 
 }
 
+//== Blockquotes
+
+blockquote {
+	position: relative;
+	quotes: "\201C""\201D""\2018""\2019";
+	font-weight: 300;
+	padding: 0 0 0 2em;
+	border: 0;
+}
+blockquote:before {
+	font-family: $font-family-sans-serif-2;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 35px;
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	vertical-align: -0.4em;
+}
+
+blockquote cite{
+	font-size: 0.6em;
+	font-style: normal;
+	font-weight: 500;
+	&:before{
+		content: "-";
+		margin-right: 10px;
+		content: "\2014 \2009";
+	}
+}
+
 //== Footer
 footer.footer{
 	padding: 2em 0;
 	background: $gray-lighter;
 }
 
+//== Diagram: CBM Cycle (large screens)
+.diagram-container-large-screens .diagram#cbm-cycle{
+	display: inline-block;
+	width: 700px;
+	height: 700px;
+	position: relative;
+	.diagram-box{
+
+		width: 180px;
+
+		&#box-step1{ position: absolute; top: 145px; left: 255px; }
+		&#box-step2{ position: absolute; top: 235px; left: 430px; }
+		&#box-step3{ position: absolute; top: 435px; left: 470px; }
+		&#box-step4{ position: absolute; top: 625px; left: 360px; }
+		&#box-step5{ position: absolute; top: 625px; left: 165px; }
+		&#box-step6{ position: absolute; top: 445px; left: 50px; }
+		&#box-step7{ position: absolute; top: 240px; left: 85px; }
+
+	}
+	.diagram-caption{
+		display: inline-block;
+		background: rgba(0,0,0,0.8);
+		color: $white;
+		text-align: left;
+		line-height: 1;
+		font-family: $font-family-sans-serif-2;
+		padding: 5px;
+		border-radius: 3px;
+		h1, h2 { margin: 0; }
+		h1 { 
+			font-size: 30px; 
+			font-weight: bold; 
+			color: $brand-secondary; 
+			text-align: center;
+			float: left;
+			line-height: 36px;
+			padding: 0 10px 0 5px;
+			margin-right: 10px;
+			border-right: solid 1px $white;
+		}
+		h2 { 
+			font-size: 12px; 
+			font-weight: bold; 
+			line-height: 18px;
+		}
+		&:hover{
+			background: $brand-secondary-dark;
+		}
+	}
+
+	#box-step3 .diagram-caption h2{ line-height: 12px; }
+
+	.diagram-comment{
+		color: $white;
+		font-family: $font-family-sans-serif-2;
+		font-size: 11px;
+		font-weight: bold;
+		text-align: left;
+		position: absolute;
+		&#feedback{
+			width: 120px;
+			top: 40px;
+			left: 130px;
+		}
+	}
+
+}
+
+//== Diagram: CBM Cycle (small screens)
+.diagram-container-small-screens .diagram#cbm-cycle{
+
+	.diagram-box{
+
+		text-align: center;
+
+	}
+
+	.diagram-image{
+		margin-top: 40px;
+	}
+
+	.diagram-caption{
+		display: inline-block;
+		margin-top: -20px; 
+		background: rgba(0,0,0,0.8);
+		color: $white;
+		text-align: left;
+		line-height: 1;
+		font-family: $font-family-sans-serif-2;
+		padding: 5px;
+		border-radius: 3px;
+		h1, h2 { margin: 0; }
+		h1 { 
+			font-size: 30px; 
+			font-weight: bold; 
+			color: $brand-secondary; 
+			text-align: center;
+			float: left;
+			line-height: 36px;
+			padding: 0 10px 0 5px;
+			margin-right: 10px;
+			border-right: solid 1px $white;
+		}
+		h2 { 
+			font-size: 12px; 
+			font-weight: bold; 
+			line-height: 18px;
+		}
+		&:hover{
+			background: $brand-secondary-dark;
+		}
+	}
+
+	.diagram-comment{
+		color: $white;
+		font-family: $font-family-sans-serif-2;
+		font-size: 11px;
+		font-weight: bold;
+		text-align: left;
+		position: absolute;
+		&#feedback{
+			width: 120px;
+			top: 40px;
+			left: 130px;
+		}
+	}
+
+}
+
+//== Tricks
+
+/* remove top margin from headings if the heading is the first element in a DIV */
+
+div + h1 {
+    margin-top: 0;
+}
+
 //== Helper classes
+
 .uppercase{
 	text-transform: uppercase;
 }
+
 .min-width{
 	white-space: nowrap;
 	width: 1px;
 }
+
+.one-line{
+	display: inline-block;
+}
+
+.add-padding-top { padding-top: 2em; }
+.add-padding-bottom { padding-bottom: 2em; }
+.add-padding-both { padding-top: 2em; padding-bottom: 2em; }
+
+.add-border-bottom { border-bottom: solid 1px $black; }
+
+.remove-heading-margin-top{
+	h1,h2,h3,h4,h5,h6{ margin-top: 0; }
+}
+
+.text-black{ color: $black; }
+.text-white{ color: $white; }
+.text-primary{ color: $brand-primary; }
+.text-secondary { color: $brand-secondary; }
+
+.text-primary { color: $brand-primary; }
+.text-primary-light { color: $brand-primary-light; }
+.text-primary-dark { color: $brand-primary-dark; }
+
+.text-secondary { color: $brand-secondary; }
+.text-secondary-light{ color: $brand-secondary-light; }
+.text-secondary-dark { color: $brand-secondary-dark; }
+
+.bg-primary{ background-color: $brand-primary; }
+.bg-primary-light{ background-color: $brand-primary-light; }
+.bg-primary-dark{ background-color: $brand-primary-dark; }
+
+.bg-secondary{ background-color: $brand-secondary; }
+.bg-secondary-light{ background-color: $brand-secondary-light; }
+.bg-secondary-dark{ background-color: $brand-secondary-dark; }
+
+.bg-white { background-color: $white; }
+.bg-black { background-color: $black; }
+
+.bg-gray{ background-color: $gray; }
+.bg-gray-light{ background-color: $gray-light; }
+.bg-gray-lighter{ background-color: $gray-lighter; }
+.bg-gray-dark{ background-color: $gray-dark; }
+.bg-gray-darker{ background-color: $gray-darker; }
