@@ -25,12 +25,12 @@ layout: default
 
   </div>
   
-  <div class="bg-secondary bg-image add-padding-both remove-heading-margin-top" id="what-is-cbm" style="background: url(img/black-sash-protest.jpg); background-position: center bottom;">
+  <div class="bg-secondary-light add-padding-both remove-heading-margin-top" id="what-is-cbm">
     <div class="container">
       <div class="row">
       	<div class="col-md-8 col-md-offset-2">
       	    <h2 class="text-white">What is <strong>Citizen-Based Monitoring (CBM)</strong>?</h2>
-      	    <p class="text-white">
+      	    <p>
               <strong>Citizen-based monitoring (CBM) allows civil society to gather and analyse information from the service users’ points of view.</strong> It recognises that Citizens and public service users are active holders of fundamental rights and not merely passive users of public services. As a result, CBM provides strong evidence to take back to government and, where necessary, into the public domain, in order to better the delivery of services where needed and to acknowledge good service where it is provided.
             </p>
       	</div>
@@ -274,9 +274,7 @@ layout: default
           </ol>
         </div>
         <div class="col-md-6">
-          <p>To ensure that the local service improves, we need local users and organisations based in the community to be driving this process. 
-          <img src="/img/black-sash-people.jpg" class="pull-right img-thumbnail add-margin-img-right" width="300px" height="auto">
-          The strength of this model lies in formulating a strong relationship with an existing community-based organisation as these are the people actively involved in their communities and understand the local context. Great care is taken to select the correct organisation to partner with. Once the selection has occurred the community partner is trained and skilled up on who best to perform this monitoring.</p>
+          <p>To ensure that the local service improves, we need local users and organisations based in the community to be driving this process. The strength of this model lies in formulating a strong relationship with an existing community-based organisation as these are the people actively involved in their communities and understand the local context. Great care is taken to select the correct organisation to partner with. Once the selection has occurred the community partner is trained and skilled up on who best to perform this monitoring.</p>
         </div>
       </div>
     </div>
