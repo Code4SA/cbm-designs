@@ -448,7 +448,7 @@ div + h1 {
 //== Helper classes
 
 .bg-image{
-    background-size: cover;
+    background-size: 100% !important;
     background-repeat: no-repeat;
     background-position: center center;
     text-shadow: 0 0 2px $white;
@@ -457,6 +457,13 @@ div + h1 {
     }
     .btn{
     	text-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    /* For mobile phones: */
+    .bg-image{
+    	background-size: cover !important;
     }
 }
 
