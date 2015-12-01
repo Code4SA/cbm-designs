@@ -448,7 +448,7 @@ div + h1 {
 //== Helper classes
 
 .bg-image{
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     text-shadow: 0 0 2px $white;
